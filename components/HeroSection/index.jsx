@@ -27,7 +27,7 @@ const HeroSection = (props) => {
             >
               Hello👋🏻‍,
               <br />
-              I'm <span>Meet Mandaviya</span>,
+              I&apos;m <span>Meet Mandaviya</span>,
               <br /> I build things for the web.
             </motion.h1>
             <motion.h3
@@ -39,8 +39,8 @@ const HeroSection = (props) => {
               I have 3+ years of experience in crafting web applications and
               solutions for <span>start-ups</span> to{" "}
               <span>large companies</span>. Also I help business owners find
-              their success by building MVPs. Currently I'm at Mars and solving
-              problems for aliens.
+              their success by building MVPs. Currently I&apos;m at Mars and
+              solving problems for aliens.
             </motion.h3>
             <Button
               initial={{ opacity: 0 }}

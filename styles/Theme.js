@@ -1,14 +1,12 @@
 const theme = {
   bp: {
-    mobileS: `max-width: 330px`,
-    mobileM: `max-width: 400px`,
-    mobileL: `max-width: 480px`,
-    tabletS: `max-width: 600px`,
-    tabletL: `max-width: 768px`,
-    desktopXS: `max-width: 900px`,
-    desktopS: `max-width: 1080px`,
-    desktopM: `max-width: 1200px`,
-    desktopL: `max-width: 1400px`,
+    mobileS: "320px",
+    mobileM: "375px",
+    mobileL: "425px",
+    tablet: "768px",
+    laptop: "1024px",
+    laptopL: "1440px",
+    desktop: "2560px",
   },
 };
 

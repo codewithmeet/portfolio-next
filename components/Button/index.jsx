@@ -8,12 +8,12 @@ const Button = ({ children, ...props }) => {
 
 export default Button;
 
-const AppBtn = styled(motion.button)`
+const AppBtn = styled.button`
   border: none;
   outline: none;
   color: whitesmoke;
   border-radius: 4px;
-  padding: 1em 3.2em;
+  padding: 0.8em 2.2em;
   font-size: 1em;
   cursor: pointer;
   font-weight: 600;

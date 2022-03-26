@@ -48,10 +48,18 @@ const Logo = styled.h4`
   }
 `;
 
-const NavLinkContainer = styled.ul`
-  list-style: none;
+const NavLinkContainer = styled(motion.ul)`
   display: flex;
+
   align-items: center;
+  ${(props) =>
+    props.direction === "vertical" &&
+    "flex-direction: column; justify-content: center; align-items: flex-start; margin-block: 0; padding-inline: 0;"};
+
+  li {
+    ${(props) =>
+      props.direction === "vertical" && "font-size: 2rem; margin: 10px 0;"}
+  }
 `;
 
 const NavLink = styled(motion.li)`
@@ -64,12 +72,13 @@ const NavLink = styled(motion.li)`
   margin: 0 20px;
   cursor: pointer;
   font-size: 1rem;
+  ${(props) => props.direction === "vertical" && "margin -bottom: 10px;"}
   transition: var(--transition);
   &::after {
     position: absolute;
     content: "";
     background: rgba(255, 193, 5, 1);
-    top: 30px;
+    top: ${(props) => (props.direction === "vertical" ? 36 : 22)}px;
     left: 1px;
     width: 0;
     height: 2px;

@@ -9,8 +9,8 @@ export default Box;
 
 const Container = styled.div`
   position: relative;
-  min-height: ${(props) => props.height || "100vh"};
-  height: 100vh;
+  height: calc(100vh - 90px);
+  padding: 90px 0 0 0;
   background-color: ${(props) =>
     props?.color?.length > 0 ? props.color : "transperent"};
   ${({ flex }) =>
@@ -23,15 +23,18 @@ const Container = styled.div`
     css`
       justify-content: ${justifyContent || "unset"};
     `}
-      ${({ alignItems }) =>
+  ${({ alignItems }) =>
     alignItems &&
     css`
       align-items: ${alignItems || "unset"};
     `}
-   
-
-
-  h1 {
-    font-size: 3.375rem;
+ @media (max-width: 1080px) {
+    padding: 150px 0 0 0;
+  }
+  @media (max-width: 768px) {
+    padding: 125px 0 0 0;
+  }
+  @media (max-width: 480px) {
+    padding: 100px 0 0 0;
   }
 `;

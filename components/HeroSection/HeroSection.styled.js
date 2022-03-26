@@ -4,12 +4,10 @@ import { motion } from "framer-motion";
 
 const HeroWrapper = styled.div`
   display: flex;
-
   padding: 0em 0;
 `;
 
-const HeroTextContainer = styled.div`
-  width: 50%;
+const HeroTextContainer = styled(motion.div)`
   color: whitesmoke;
   padding: 1em 0;
   display: grid;
@@ -18,11 +16,16 @@ const HeroTextContainer = styled.div`
   place-content: center;
   place-items: start;
   row-gap: 2em;
+  transition: var(--transition);
   span {
     color: #fc5185;
   }
+  h1 {
+    font-size: clamp(2.2rem, 10vw, 2.7rem);
+  }
 
   h3 {
+    font-size: clamp(1rem, 3vw, 1.2rem);
     line-height: 1.5em;
     text-align: justify;
     color: #e5e5e5;
@@ -44,7 +47,7 @@ const HeroPicContainer = styled.div`
 `;
 
 const HeroPic = styled(Image).attrs({
-  height: "600",
+  height: "500",
 })`
   object-fit: contain;
 `;

@@ -19,6 +19,8 @@ import {
   HeroPicContainer,
   HeroPicWrapper,
 } from "../components/HeroSection/HeroSection.styled";
+import Column from "../components/Column";
+import Row from "../components/Row";
 
 export default function Home() {
   return (
@@ -28,36 +30,44 @@ export default function Home() {
         <title>Home</title>
       </Head>
       <Header />
+      {/* <Row>
+        <Column xs="12" sm="6" md="8">
+          md - 8 : sm - 6 : xs : 12
+        </Column>
+        <Column xs="6" md="4">
+          md - 4 : xs : 6
+        </Column>
+      </Row> */}
       <main>
-        <div>
-          <HeroSection id="home" />
-          <AboutSection id="about" />
-          <StickWrapper>
-            <StickElements $mode="right" bottom="15px" right="-50px">
-              {/* Hero Pics */}
-              <HeroPicWrapper
-                initial={{ x: 10, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ ease: "easeOut", duration: 1, delay: 1 }}
-                viewport={{ once: true }}
-              >
-                <HeroPicContainer>
-                  <HeroPic src={profilePic} priority />
-                </HeroPicContainer>
-              </HeroPicWrapper>
-            </StickElements>
-          </StickWrapper>
-        </div>
-        <WorkSection id="work" />
+        <HeroSection id="home" />
+        {/* <AboutSection id="about" /> */}
+        {/* <WorkSection id="work" /> */}
       </main>
 
       {/* Sticky Elements */}
-      <StickWrapper>
+      {/* <StickWrapper>
         <StickElements $mode="right" line>
           <a href="mailto:codewithmeet">codewithmeet@gmail.com</a>
         </StickElements>
-      </StickWrapper>
-      <Footer />
+      </StickWrapper> */}
+      {/* <Footer /> */}
     </ThemeProvider>
   );
 }
+
+// <Column lg="6">
+//   <StickWrapper>
+//     <StickElements $mode="right" bottom="100px" right="-100px">
+//       <HeroPicWrapper
+//         initial={{ y: 10, opacity: 0 }}
+//         whileInView={{ y: 0, opacity: 1 }}
+//         transition={{ ease: "easeIn", duration: 1, delay: 1 }}
+//         viewport={{ once: true }}
+//       >
+//         <HeroPicContainer>
+//           <HeroPic src={profilePic} priority />
+//         </HeroPicContainer>
+//       </HeroPicWrapper>
+//     </StickElements>
+//   </StickWrapper>
+// </Column>;

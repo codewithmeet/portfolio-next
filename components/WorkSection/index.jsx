@@ -1,15 +1,17 @@
 import React from "react";
 import Box from "../Box";
+import Column from "../Column";
 import Heading from "../Heading";
-import SectionContainer from "../SectionContainer";
+import Row from "../Row";
 
 const WorkSection = (props) => {
   return (
-    <Box flex justifyContent="center" {...props} height="100vh">
-      <SectionContainer padding>
+    <Row>
+      <Box {...props}>
         <Heading title="Works" subtitle="Take A Glance At My" />
-      </SectionContainer>
-    </Box>
+        <Column></Column>
+      </Box>
+    </Row>
   );
 };
 

@@ -2,58 +2,79 @@ import React from "react";
 import Box from "../Box";
 import Button from "../Button";
 import { motion } from "framer-motion";
-import {
-  HeroPic,
-  HeroPicContainer,
-  HeroPicWrapper,
-  HeroTextContainer,
-  HeroWrapper,
-} from "./HeroSection.styled";
+import { HeroTextContainer, HeroWrapper } from "./HeroSection.styled";
 import SectionContainer from "../SectionContainer";
-
-import profilePic from "../../public/profilepic.png";
-
+import Row from "../Row";
+import Column from "../Column";
 const HeroSection = (props) => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.8,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      animate: { pathLength: 2 },
+    },
+  };
+
+  const one = (
+    <h1>
+      Hello👋🏻‍,
+      <br />
+      I&apos;m <span>Meet Mandaviya</span>,
+      <br /> I build things for the web.
+    </h1>
+  );
+
+  const two = (
+    <h3>
+      I have 3+ years of experience in crafting web applications and solutions
+      for <span>start-ups</span> to <span>large companies</span>. Also I help
+      business owners find their success by building MVPs. Currently I&apos;m at
+      Mars and solving problems for aliens.
+    </h3>
+  );
+
+  const three = <Button>Contact</Button>;
+
+  const elements = [one, two, three];
+
   return (
-    <Box flex justifyContent="center" {...props}>
-      <SectionContainer>
-        <HeroWrapper>
-          <HeroTextContainer>
-            <motion.h1
-              initial={{ y: 10, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ ease: "easeOut", duration: 1, delay: 1 }}
-              viewport={{ once: true }}
+    <Row>
+      <Column lg="6" md="12" sm="12" xs="12">
+        <Box {...props}>
+          <HeroWrapper>
+            <HeroTextContainer
+              initial="hidden"
+              whileInView="show"
+              variant={container}
             >
-              Hello👋🏻‍,
-              <br />
-              I&apos;m <span>Meet Mandaviya</span>,
-              <br /> I build things for the web.
-            </motion.h1>
-            <motion.h3
-              initial={{ y: 10, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ ease: "easeOut", duration: 1, delay: 1 }}
-              viewport={{ once: true }}
-            >
-              I have 3+ years of experience in crafting web applications and
-              solutions for <span>start-ups</span> to{" "}
-              <span>large companies</span>. Also I help business owners find
-              their success by building MVPs. Currently I&apos;m at Mars and
-              solving problems for aliens.
-            </motion.h3>
-            <Button
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ ease: "easeIn", duration: 2, delay: 1.3 }}
-              viewport={{ once: true }}
-            >
-              Contact
-            </Button>
-          </HeroTextContainer>
-        </HeroWrapper>
-      </SectionContainer>
-    </Box>
+              {elements.map((element, index) => (
+                <motion.div
+                  key={index}
+                  variants={item}
+                  viewport={{ once: true }}
+                  style={{
+                    transition: "all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)",
+                    transitionDelay: `${(index + 1.5) * 200}ms`,
+                  }}
+                >
+                  {element}
+                </motion.div>
+              ))}
+            </HeroTextContainer>
+          </HeroWrapper>
+        </Box>
+      </Column>
+    </Row>
   );
 };
 

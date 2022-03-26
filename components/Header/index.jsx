@@ -8,12 +8,15 @@ import {
   NavLinkContainer,
 } from "./Header.style";
 import config from "../../config";
-
+import { Spiral as Hamburger } from "hamburger-react";
 import useScrollDirection from "../../hooks/useScrollDirection";
-import Link from "next/link";
+import Hide from "../Hide";
+import Sidebar from "../Sidebar";
 
 const Header = () => {
   const [active, setActive] = useState(0);
+
+  const [open, setOpen] = useState(false);
   const router = useRouter();
 
   const scrollDirection = useScrollDirection("down");
@@ -39,35 +42,62 @@ const Header = () => {
       setActive(e.target.id);
     }
     router.push(`/${target}`);
+    setOpen(false);
   };
 
+  const handleSideBar = () => setOpen(!open);
+
   return (
-    <Nav scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
-      <Container>
-        <Logo>
-          Meet Mandaviya<span>.</span>
-        </Logo>
-        <NavLinkContainer>
-          {config.navlinks.map(({ id, title, url }, index) => (
-            <NavLink
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              key={id}
-              id={id}
-              href={url}
-              onClick={scrollTo}
-              active={`${id === parseInt(active)}`}
-              style={{ transitionDelay: `${(index + 1.5) * 100}ms` }}
+    <>
+      <Nav scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
+        <Container>
+          <Logo>
+            Meet Mandaviya<span>.</span>
+          </Logo>
+          <Hide xs sm md>
+            <NavLinkContainer
+              variants={container}
+              initial="hidden"
+              animate="show"
             >
-              {index}.{title}
-            </NavLink>
-          ))}
-        </NavLinkContainer>
-      </Container>
-    </Nav>
+              {config.navlinks.map(({ id, title, url }, index) => (
+                <NavLink
+                  variants={item}
+                  viewport={{ once: true }}
+                  key={id}
+                  id={id}
+                  href={url}
+                  onClick={scrollTo}
+                  active={`${id === parseInt(active)}`}
+                  style={{ transitionDelay: `${(index + 1.5) * 100}ms` }}
+                >
+                  <span>{index}</span>.{title}
+                </NavLink>
+              ))}
+            </NavLinkContainer>
+          </Hide>
+          <Hide lg>
+            <Hamburger onToggle={handleSideBar} toggled={open} />
+          </Hide>
+        </Container>
+      </Nav>
+      <Sidebar handleScroll={scrollTo} active={active} isShown={open} />
+    </>
   );
 };
+/* Transition Styles */
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 1,
+    },
+  },
+};
 
+const item = {
+  hidden: { opacity: 0, y: "-10px" },
+  show: { opacity: 1, y: "0px" },
+};
 export default Header;

@@ -115,21 +115,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main {
+    display: grid;
+    place-items: center;
     width: 100%;
-    max-width: 1600px;
-    min-height: 100vh;
+ 
 
-    @media (max-width: 1080px) {
-      padding: 200px 0px;
-    }
-    @media (max-width: 768px) {
-      padding: 150px 50px;
-    }
-    @media (max-width: 480px) {
-      padding: 125px 25px;
-    }
-
-    &.fillHeight {
+    /* &.fillHeight {
       padding: 0 150px;
 
       @media (max-width: 1080px) {
@@ -141,7 +132,7 @@ const GlobalStyle = createGlobalStyle`
       @media (max-width: 480px) {
         padding: 0 25px;
       }
-    }
+    } */
   }
 
 
@@ -216,9 +207,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ul {
+          list-style: none;
     &.fancy-list {
-      padding: 0;
-      margin: 0;
+
       list-style: none;
       font-size: var(--fz-lg);
       li {
@@ -228,6 +219,7 @@ const GlobalStyle = createGlobalStyle`
         &:before {
           content: '▹';
           position: absolute;
+          font-size: var(--fx-lg);
           left: 0;
           color: var(--brand-pink);
         }
@@ -263,6 +255,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: var(--font-mono);
     font-size: var(--fz-md);
   }
+
+
 
 
   /* ${TransitionStyles}; */

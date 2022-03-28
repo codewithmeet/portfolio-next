@@ -61,6 +61,17 @@ const HeroPicContainer = styled.div`
     opacity: 0.5;
     z-index: -1;
   }
+  ::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 60%;
+    height: 60%;
+    background: linear-gradient(to right, #fc5185, #f57dff);
+    opacity: 0.5;
+    z-index: -1;
+  }
 `;
 
 const HeroPic = styled(Image)`

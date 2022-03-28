@@ -28,23 +28,38 @@ const Heading = ({ title, subtitle }) => {
 export default Heading;
 
 const CustomHeaderWrapper = styled.div`
-  margin: 0 0 2em 0;
+  margin: 1em 0;
+  @media (max-width: 768px) {
+    margin-left: 1em;
+  }
 `;
 
 const CustomHeading = styled(motion.h2)`
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
   position: relative;
-  color: #ffffff;
-  font-size: 2rem;
+  margin: 10px 0px 40px;
+  width: 100%;
+  font-size: clamp(26px, 5vw, var(--fz-heading));
+  white-space: nowrap;
   ::after {
-    position: absolute;
     content: "";
     height: 3px;
-    border-radius: 10px;
-    width: 2em;
+    width: 400px;
     background-color: #fc5851;
-    top: 50%;
-    left: -2.4em;
     bottom: 0;
+    display: block;
+    position: relative;
+    top: 50%;
+    height: 1px;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 768px) {
+    ::after {
+      width: 100%;
+    }
   }
 `;
 

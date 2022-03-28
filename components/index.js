@@ -4,6 +4,9 @@ import Button from "./Button";
 import StickElements, { StickWrapper } from "./StickyElements";
 import Heading from "./Heading";
 import Footer from "./Footer";
+import Column from "./Column";
+import Row from "./Row";
+import Hide from "./Hide";
 
 // Sections
 import HeroSection from "./HeroSection";
@@ -21,4 +24,7 @@ export {
   AboutSection,
   WorkSection,
   Footer,
+  Column,
+  Row,
+  Hide,
 };

@@ -34,7 +34,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: whitesmoke;
+  color: var(--brand-pink);
 
   ${(props) => {
     switch (props.$mode) {
@@ -58,7 +58,7 @@ const Line = styled.div`
   margin-top: 0.5em;
   height: 6em;
   width: 2px;
-  background-color: whitesmoke;
+  background-color: var(--dark-slate);
   /* border-style: none; */
 `;
 

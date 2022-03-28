@@ -15,13 +15,13 @@ export default {
       title: "Work",
       url: "#work",
     },
+    // {
+    //   id: 4,
+    //   title: "Experience",
+    //   url: "#experience",
+    // },
     {
       id: 4,
-      title: "Experience",
-      url: "#experience",
-    },
-    {
-      id: 5,
       title: "Contact",
       url: "#contact",
     },
@@ -41,9 +41,9 @@ export default {
     "NodeJs",
     "ExpressJs",
     "MongoDb",
-    "Styled-Components",
-    "TailwindCSS",
-    "Material Ui",
+    "Redux",
+    "Recoil",
+    "GraphQL",
   ],
 
   sizes: {

@@ -42,7 +42,7 @@ const Logo = styled.h4`
   width: 10%;
   font-weight: 800;
   letter-spacing: 2px;
-  color: white;
+  color: var(--light-slate);
   span {
     color: #fc5158;
   }

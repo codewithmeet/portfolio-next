@@ -62,7 +62,7 @@ const CustomBox = styled.div`
   z-index: 9999;
   background-color: var(--light-navy);
   padding: 2rem;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;

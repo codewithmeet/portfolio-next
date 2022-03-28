@@ -2,7 +2,15 @@ import React from "react";
 import Box from "../Box";
 import Button from "../Button";
 import { motion } from "framer-motion";
-import { HeroTextContainer, HeroWrapper } from "./HeroSection.styled";
+
+import profilePic from "../../public/profile-1.png";
+import {
+  HeroPic,
+  HeroPicContainer,
+  HeroPicWrapper,
+  HeroTextContainer,
+  HeroWrapper,
+} from "./HeroSection.styled";
 import SectionContainer from "../SectionContainer";
 import Row from "../Row";
 import Column from "../Column";
@@ -49,7 +57,7 @@ const HeroSection = (props) => {
 
   return (
     <Row>
-      <Column lg="6" md="12" sm="12" xs="12">
+      <Column lg="8" md="12" sm="12" xs="12">
         <Box {...props}>
           <HeroWrapper>
             <HeroTextContainer
@@ -73,6 +81,18 @@ const HeroSection = (props) => {
             </HeroTextContainer>
           </HeroWrapper>
         </Box>
+      </Column>
+      <Column lg="4" md="12" sm="12" xs="12">
+        <HeroPicWrapper
+          initial={{ y: 10, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ ease: "easeIn", duration: 1, delay: 1 }}
+          viewport={{ once: true }}
+        >
+          <HeroPicContainer>
+            <HeroPic src={profilePic} width={600} height={900} />
+          </HeroPicContainer>
+        </HeroPicWrapper>
       </Column>
     </Row>
   );

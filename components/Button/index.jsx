@@ -17,7 +17,7 @@ const AppBtn = styled.button`
   font-size: 1em;
   cursor: pointer;
   font-weight: 600;
-  border: 1px solid #fc5851;
+  border: 1px solid var(--brand-pink);
   transition: all 0.3s ease-in-out;
   background-color: var(--nav-blue);
   :hover {

@@ -1,9 +1,7 @@
 import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 
-const AboutWrapper = styled.div`
-  width: 50%;
-`;
+const AboutWrapper = styled.div``;
 
 const AboutDosList = styled(motion.ul)``;
 

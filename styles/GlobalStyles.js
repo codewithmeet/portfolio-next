@@ -208,6 +208,7 @@ const GlobalStyle = createGlobalStyle`
 
   ul {
           list-style: none;
+          padding-inline: 0;
     &.fancy-list {
 
       list-style: none;

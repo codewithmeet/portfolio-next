@@ -4,12 +4,18 @@ import { motion } from "framer-motion";
 
 const HeroWrapper = styled.div`
   display: flex;
-  padding: 0em 0;
+  padding: 0em 4em 0 0;
+  @media (max-width: 768px) {
+    padding: 0 1em;
+  }
 `;
 
 const HeroTextContainer = styled(motion.div)`
   color: whitesmoke;
-  padding: 1em 0;
+  padding: 4em 0;
+  @media (max-width: 768px) {
+    padding: 4em 0 0 0;
+  }
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   grid-auto-rows: max-content;
@@ -21,7 +27,8 @@ const HeroTextContainer = styled(motion.div)`
     color: #fc5185;
   }
   h1 {
-    font-size: clamp(2.2rem, 10vw, 2.7rem);
+    font-size: clamp(40px, 3vw, 80px);
+    width: 100%;
   }
 
   h3 {
@@ -33,23 +40,32 @@ const HeroTextContainer = styled(motion.div)`
 `;
 
 const HeroPicWrapper = styled(motion.div)`
+  position: relative;
   display: grid;
-  place-content: center;
+  place-items: center;
 `;
 
 const HeroPicContainer = styled.div`
   position: relative;
-  ::after {
+  display: grid;
+  place-items: center;
+  padding: 2em;
+  ::before {
     content: "";
     position: absolute;
-    background-color: yellow;
+    bottom: 10px;
+    right: 5px;
+    width: 60%;
+    height: 60%;
+    background: linear-gradient(to right, #fc5185, #f57dff);
+    opacity: 0.5;
+    z-index: -1;
   }
 `;
 
-const HeroPic = styled(Image).attrs({
-  height: "500",
-})`
-  object-fit: contain;
+const HeroPic = styled(Image)`
+  position: absolute;
+  background-color: var(--light-navy);
 `;
 
 export {

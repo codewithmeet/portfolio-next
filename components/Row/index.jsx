@@ -14,4 +14,9 @@ const AppRow = styled.div`
     clear: both;
     display: table;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 0.8em;
+  }
 `;

@@ -10,16 +10,11 @@ import {
   Footer,
   Header,
   HeroSection,
+  Hide,
   StickElements,
   StickWrapper,
   WorkSection,
 } from "../components";
-import {
-  HeroPic,
-  HeroPicContainer,
-  HeroPicWrapper,
-} from "../components/HeroSection/HeroSection.styled";
-import Column from "../components/Column";
 import Row from "../components/Row";
 
 export default function Home() {
@@ -40,17 +35,20 @@ export default function Home() {
       </Row> */}
       <main>
         <HeroSection id="home" />
-        {/* <AboutSection id="about" /> */}
-        {/* <WorkSection id="work" /> */}
+        <AboutSection id="about" />
+        <WorkSection id="work" />
       </main>
 
       {/* Sticky Elements */}
-      {/* <StickWrapper>
-        <StickElements $mode="right" line>
-          <a href="mailto:codewithmeet">codewithmeet@gmail.com</a>
-        </StickElements>
-      </StickWrapper> */}
-      {/* <Footer /> */}
+
+      <StickWrapper>
+        <Hide sm md xs>
+          <StickElements $mode="right" line>
+            <a href="mailto:codewithmeet">codewithmeet@gmail.com</a>
+          </StickElements>
+        </Hide>
+      </StickWrapper>
+      <Footer />
     </ThemeProvider>
   );
 }

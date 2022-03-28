@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import React from "react";
 import config from "../../config";
 import Box from "../Box";
+import Column from "../Column";
 import Heading from "../Heading";
+import Row from "../Row";
 import SectionContainer from "../SectionContainer";
 import {
   AboutDosList,
@@ -33,53 +35,57 @@ const item = {
 
 const AboutSection = (props) => {
   return (
-    <Box {...props} flex justifyContent="center" height="100vh">
-      <SectionContainer padding>
+    <Row>
+      <Box {...props}>
         <Heading title="About I can" subtitle="Know more" />
         <AboutWrapper>
-          <AboutDosList
-            variants={container}
-            className="fancy-list"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
-            {config.about.map((dos, index) => (
-              <AboutDosListItem
-                key={index}
-                variants={item}
-                style={{
-                  transitionDelay: `${(index + 0.8) * 200}ms`,
-                }}
-              >
-                {dos}
-              </AboutDosListItem>
-            ))}
-          </AboutDosList>
-
-          <Heading title="Skills" />
-          <SkillsList
-            variants={container}
-            className="fancy-list"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
-            {config.skills.map((skill, index) => (
-              <SkillsListItem
-                key={index}
-                variants={item}
-                style={{
-                  transitionDelay: `${(index + 1.5) * 200}ms`,
-                }}
-              >
-                {skill}
-              </SkillsListItem>
-            ))}
-          </SkillsList>
+          <Column lg="12" xs="12" sm="12">
+            <AboutDosList
+              variants={container}
+              className="fancy-list"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              {config.about.map((dos, index) => (
+                <AboutDosListItem
+                  key={index}
+                  variants={item}
+                  style={{
+                    transitionDelay: `${(index + 0.8) * 200}ms`,
+                  }}
+                >
+                  {dos}
+                </AboutDosListItem>
+              ))}
+            </AboutDosList>
+          </Column>
+          <hr />
+          <Column lg="4" xs="12" sm="12">
+            <Heading title="Toolbelt" subtitle="My Awesome" />
+            <SkillsList
+              variants={container}
+              className="fancy-list"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              {config.skills.map((skill, index) => (
+                <SkillsListItem
+                  key={index}
+                  variants={item}
+                  style={{
+                    transitionDelay: `${(index + 1.5) * 200}ms`,
+                  }}
+                >
+                  {skill}
+                </SkillsListItem>
+              ))}
+            </SkillsList>
+          </Column>
         </AboutWrapper>
-      </SectionContainer>
-    </Box>
+      </Box>
+    </Row>
   );
 };
 

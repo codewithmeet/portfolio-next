@@ -90,7 +90,7 @@ const HeroSection = (props) => {
           viewport={{ once: true }}
         >
           <HeroPicContainer>
-            <HeroPic src={profilePic} width={600} height={900} />
+            <HeroPic src={profilePic} width={600} height={900} priority />
           </HeroPicContainer>
         </HeroPicWrapper>
       </Column>

@@ -19,37 +19,36 @@ import Row from "../components/Row";
 
 export default function Home() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
+    <>
       <Head>
         <title>Home</title>
       </Head>
-      <Header />
-      {/* <Row>
-        <Column xs="12" sm="6" md="8">
-          md - 8 : sm - 6 : xs : 12
-        </Column>
-        <Column xs="6" md="4">
-          md - 4 : xs : 6
-        </Column>
-      </Row> */}
-      <main>
-        <HeroSection id="home" />
-        <AboutSection id="about" />
-        <WorkSection id="work" />
-      </main>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
 
-      {/* Sticky Elements */}
+        {/* Header */}
+        <Header />
 
-      <StickWrapper>
-        <Hide sm md xs>
-          <StickElements $mode="right" line>
-            <a href="mailto:codewithmeet">codewithmeet@gmail.com</a>
-          </StickElements>
-        </Hide>
-      </StickWrapper>
-      <Footer />
-    </ThemeProvider>
+        {/* Sections */}
+        <main>
+          <HeroSection id="home" />
+          <AboutSection id="about" />
+          <WorkSection id="work" />
+        </main>
+
+        {/* Sticky Elements */}
+        <StickWrapper>
+          <Hide sm md xs>
+            <StickElements $mode="right" line>
+              <a href="mailto:codewithmeet">codewithmeet@gmail.com</a>
+            </StickElements>
+          </Hide>
+        </StickWrapper>
+
+        {/* Footer */}
+        <Footer />
+      </ThemeProvider>
+    </>
   );
 }
 

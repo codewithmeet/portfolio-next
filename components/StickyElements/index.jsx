@@ -28,34 +28,34 @@ const Container = styled.div`
   z-index: 9999;
   bottom: ${(props) => props.bottom || 0};
 
-  font-weight: 300;
-  font-size: 0.9em;
+  font-weight: 100;
+  font-size: 0.8em;
   writing-mode: vertical-lr;
+  font-family: "Red Hat Mono", monospace;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: var(--brand-pink);
-
+  color: var(--dark-slate);
   ${(props) => {
     switch (props.$mode) {
       case "left":
         return css`
-          left: ${props.left ? props.left : "5em"};
+          left: ${props.left ? props.left : "3em"};
         `;
       case "right":
         return css`
-          right: ${props.right ? props.right : "5em"};
+          right: ${props.right ? props.right : "3em"};
         `;
       default:
         return css`
-          right: ${props.right ? props.right : "5em"};
+          right: ${props.right ? props.right : "3em"};
         `;
     }
   }};
 `;
 
 const Line = styled.div`
-  margin-top: 0.5em;
+  margin-top: 2em;
   height: 6em;
   width: 2px;
   background-color: var(--dark-slate);

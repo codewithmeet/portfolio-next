@@ -25,7 +25,7 @@ const Sidebar = ({ handleScroll, active, ...props }) => {
             style={{ transitionDelay: `${(index + 1.5) * 100}ms` }}
             direction="vertical"
           >
-            {index}.{title}
+            <span>{index}</span>.{title}
           </NavLink>
         ))}
       </NavLinkContainer>

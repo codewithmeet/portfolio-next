@@ -37,7 +37,7 @@ const AboutSection = (props) => {
   return (
     <Row>
       <Box {...props}>
-        <Heading title="About I can" subtitle="Know more" />
+        <Heading title="1. About I can" subtitle="Know more" />
         <AboutWrapper>
           <Column lg="12" xs="12" sm="12">
             <AboutDosList

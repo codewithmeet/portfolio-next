@@ -57,7 +57,12 @@ const HeroSection = (props) => {
 
   const three = (
     <div style={{ display: "flex", alignItems: "center" }}>
-      <Image src={topRatedBadge} width={52} height={70} />
+      <Image
+        src={topRatedBadge}
+        alt="upwork top rated badge"
+        width={52}
+        height={70}
+      />
       <h3 style={{ marginLeft: "10px" }}>Top Rated Freelancer on Upwork.</h3>
     </div>
   );

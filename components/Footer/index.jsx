@@ -56,7 +56,7 @@ const Footer = (props) => {
                 />
               </FooterFormEleWrap>
             </FooterFormEleWrap>
-            <FooterFormSubmit>Let's Talk</FooterFormSubmit>
+            <FooterFormSubmit>{`Let's Talk`}</FooterFormSubmit>
           </FooterForm>
         </FooterContainer>
       </Box>

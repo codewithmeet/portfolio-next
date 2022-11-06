@@ -1,11 +1,10 @@
-import { motion } from "framer-motion";
 import React from "react";
 import config from "../../config";
 import Box from "../Box";
 import Column from "../Column";
 import Heading from "../Heading";
 import Row from "../Row";
-import SectionContainer from "../SectionContainer";
+
 import {
   AboutDosList,
   AboutDosListItem,

@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import config from "../../config";
+
 const HeroWrapper = styled.div`
   display: flex;
   padding: 0em 4em 0 0;
@@ -12,9 +14,17 @@ const HeroWrapper = styled.div`
 
 const HeroTextContainer = styled(motion.div)`
   color: whitesmoke;
-  padding: 4em 0;
-  @media (max-width: 768px) {
-    padding: 4em 0 0 0;
+  padding: 1em 0;
+
+  @media screen and (min-width: ${config.sizes.mobileM}) {
+    padding: 4em 0;
+  }
+
+  @media screen and (min-width: ${config.sizes.mobileL}) {
+    padding: 4em 0;
+  }
+  @media screen and (min-width: ${config.sizes.laptopL}) {
+    padding: 4em 0;
   }
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));

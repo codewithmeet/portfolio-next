@@ -45,7 +45,7 @@ const ProjectDetailsWrapper = styled.div`
 
   @media screen and (min-width: ${config.sizes.laptopL}) {
     width: 50%;
-    padding: 0 2em;
+    padding: 0 0 0 4em;
     text-align: right;
     place-items: end;
     ul {
@@ -61,13 +61,16 @@ const ProjectDetailsWrapper = styled.div`
 `;
 
 const ProjectLinks = styled.div`
-  width: 12%;
+  width: 6%;
   font-size: var(--fz-xxl);
   color: var(--light-slate);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (min-width: ${config.sizes.laptopL}) {
+    width: 11%;
+  }
 `;
 
 const ProjectContent = styled.div`
@@ -83,6 +86,7 @@ const ProjectContent = styled.div`
 
 const ProjectContainer = styled.li`
   margin-bottom: 20px;
+
   @media screen and (min-width: ${config.sizes.laptopL}) {
     &:nth-child(2n + 1) {
       ${ProjectContent} {
@@ -92,6 +96,7 @@ const ProjectContainer = styled.li`
       ${ProjectDetailsWrapper} {
         place-items: start;
         text-align: left;
+        padding: 0 4em 0 0;
         ul {
           justify-content: flex-start;
           padding: 25px;
@@ -109,6 +114,7 @@ const ProjectImageWrapper = styled.a`
   position: block;
   height: auto;
   width: 100%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   @media screen and (min-width: ${config.sizes.laptopL}) {
     width: 50%;
   }
@@ -137,7 +143,9 @@ const ProjectImageWrapper = styled.a`
     }
   }
 `;
-const ProjectImage = styled(Image)``;
+const ProjectImage = styled(Image)`
+  border-radius: var(--border-radius);
+`;
 
 export {
   ProjectWrapper,

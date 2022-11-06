@@ -33,7 +33,7 @@ export default function Home() {
         <main>
           <HeroSection id="home" />
           <AboutSection id="about" />
-          <WorkSection id="work" />
+          {/* <WorkSection id="work" /> */}
         </main>
 
         {/* Sticky Elements */}
@@ -44,9 +44,9 @@ export default function Home() {
             </StickElements>
           </Hide>
         </StickWrapper>
-
-        {/* Footer */}
-        <Footer />
+        <main>
+          <Footer id="hire-me" />
+        </main>
       </ThemeProvider>
     </>
   );

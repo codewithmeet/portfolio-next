@@ -10,6 +10,7 @@ const StickElements = ({ children, ...props }) => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeOut", duration: 1, delay: 1.5 }}
         viewport={{ once: true }}
+        style={{ border: "1px dashed red", padding: "0.5em" }}
       >
         {children}
       </motion.div>
@@ -28,7 +29,8 @@ const Container = styled.div`
   z-index: 9999;
   bottom: ${(props) => props.bottom || 0};
 
-  font-weight: 100;
+  font-weight: 500;
+  letter-spacing: 2px;
   font-size: 0.8em;
   writing-mode: vertical-lr;
   font-family: "Red Hat Mono", monospace;
@@ -55,7 +57,7 @@ const Container = styled.div`
 `;
 
 const Line = styled.div`
-  margin-top: 2em;
+  margin-top: 1em;
   height: 6em;
   width: 2px;
   background-color: var(--dark-slate);

@@ -48,10 +48,10 @@ const Project = () => {
             </ul>
 
             <ProjectLinks>
-              <a>
+              <a href="#" target="_blank">
                 <FiGithub />
               </a>
-              <a>
+              <a href="#" target="_blank">
                 <FiExternalLink />
               </a>
             </ProjectLinks>

@@ -4,6 +4,8 @@ import Button from "../Button";
 import { motion } from "framer-motion";
 
 import profilePic from "../../public/profile-1.png";
+import topRatedBadge from "../../public/top-rated.png";
+
 import {
   HeroPic,
   HeroPicContainer,
@@ -11,9 +13,11 @@ import {
   HeroTextContainer,
   HeroWrapper,
 } from "./HeroSection.styled";
-import SectionContainer from "../SectionContainer";
+
 import Row from "../Row";
 import Column from "../Column";
+import Image from "next/image";
+
 const HeroSection = (props) => {
   const container = {
     hidden: { opacity: 0 },
@@ -51,9 +55,16 @@ const HeroSection = (props) => {
     </h3>
   );
 
-  const three = <Button>Contact</Button>;
+  const three = (
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <Image src={topRatedBadge} width={52} height={70} />
+      <h3 style={{ marginLeft: "10px" }}>Top Rated Freelancer on Upwork.</h3>
+    </div>
+  );
 
-  const elements = [one, two, three];
+  const four = <Button>Contact</Button>;
+
+  const elements = [one, two, three, four];
 
   return (
     <Row>
@@ -64,12 +75,12 @@ const HeroSection = (props) => {
               initial="hidden"
               whileInView="show"
               variant={container}
+              viewport={{ once: true }}
             >
               {elements.map((element, index) => (
                 <motion.div
                   key={index}
                   variants={item}
-                  viewport={{ once: true }}
                   style={{
                     transition: "all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)",
                     transitionDelay: `${(index + 1.5) * 200}ms`,

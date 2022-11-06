@@ -10,6 +10,7 @@ const Heading = ({ title, subtitle }) => {
         whileInView={{ y: 0, opacity: 1 }}
         animate={{ pathLength: 1 }}
         transition={{ duration: 2, type: "tween" }}
+        viewport={{ once: true }}
       >
         {subtitle}
       </CustomSubHeading>
@@ -18,6 +19,7 @@ const Heading = ({ title, subtitle }) => {
         whileInView={{ y: 0, opacity: 1 }}
         animate={{ pathLength: 2 }}
         transition={{ duration: 1, type: "tween" }}
+        viewport={{ once: true }}
       >
         {title}
       </CustomHeading>

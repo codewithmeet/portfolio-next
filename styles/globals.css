@@ -27,3 +27,8 @@ h6,
 p {
   margin-block: 0;
 }
+
+input {
+  border: 0;
+  outline: none;
+}

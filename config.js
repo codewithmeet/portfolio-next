@@ -10,26 +10,22 @@ export default {
       title: "About Me",
       url: "#about",
     },
-    {
-      id: 3,
-      title: "Work",
-      url: "#work",
-    },
     // {
-    //   id: 4,
-    //   title: "Experience",
-    //   url: "#experience",
+    //   id: 3,
+    //   title: "Work",
+    //   url: "#work",
     // },
+
     {
       id: 4,
-      title: "Contact",
-      url: "#contact",
+      title: "Hire Me",
+      url: "#hire-me",
     },
   ],
 
   about: [
-    "Build web applications and MVPs from scratch.",
-    "Develop high-quality Backend Architectures, RESTful APIs, and web services that can scale accordingly.",
+    "Build web applications, marketing automations, chatbots and more from scratch.",
+    "Develop high-quality Backend Architectures, RESTful APIs, Socket Architecture and web services that can scale accordingly.",
     "Integrate third-party services like (Twilio, Stripe, MailChimp & many more).",
     "Configure and deploy web applications on any cloud-based environment.",
     " Communicate clearly. And it's OK if you are far from the technical knowledge and terms.",

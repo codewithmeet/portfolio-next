@@ -33,20 +33,13 @@ const GlobalStyle = createGlobalStyle`
     outline-offset: 3px;
   }
 
-  /*
-    Remove default focus styles for mouse users ONLY if
-    :focus-visible is supported on this platform.
-  */
+
   :focus:not(:focus-visible) {
     outline: none;
     outline-offset: 0px;
   }
 
-  /*
-    Optionally: If :focus-visible is supported on this
-    platform, provide enhanced focus styles for keyboard
-    focus.
-  */
+
   :focus-visible {
     outline: 2px dashed var(--brand-pink);
     outline-offset: 3px;
@@ -120,19 +113,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
  
 
-    /* &.fillHeight {
-      padding: 0 150px;
 
-      @media (max-width: 1080px) {
-        padding: 0 100px;
-      }
-      @media (max-width: 768px) {
-        padding: 0 50px;
-      }
-      @media (max-width: 480px) {
-        padding: 0 25px;
-      }
-    } */
   }
 
 

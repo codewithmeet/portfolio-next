@@ -13,6 +13,7 @@ import {
   FooterFormTextArea,
 } from "./Footer.style";
 import Heading from "../Heading";
+import Button from "../Button";
 
 /* Todo */
 /**
@@ -56,7 +57,7 @@ const Footer = (props) => {
                 />
               </FooterFormEleWrap>
             </FooterFormEleWrap>
-            <FooterFormSubmit>{`Let's Talk`}</FooterFormSubmit>
+            <Button>{`Let's Talk`}</Button>
           </FooterForm>
         </FooterContainer>
       </Box>

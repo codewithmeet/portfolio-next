@@ -82,7 +82,7 @@ export default {
         "Google Maps API",
       ],
       github_url: null,
-      live_url: "https://www.nevitta.in/",
+      live_url: "https://www.troopixel.com/",
     },
     {
       id: 2,

@@ -26,7 +26,7 @@ const Footer = (props) => {
     <Row>
       <Box {...props}>
         <Heading
-          title="2. Hire Me"
+          title="3. Hire Me"
           subtitle="Let's turn an idea into reality"
         />
         <FooterContainer>

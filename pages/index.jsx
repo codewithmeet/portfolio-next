@@ -16,8 +16,16 @@ import {
   WorkSection,
 } from "../components";
 import Row from "../components/Row";
+import { useEffect, useState } from "react";
+import { LoadingScreen } from "../components/LoadingScreen";
 
 export default function Home() {
+  const [isLoading, setLoading] = useState(true);
+  useEffect(() => {
+    const isLoadingStart = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(isLoadingStart);
+  }, []);
+  if (isLoading) return <LoadingScreen />;
   return (
     <>
       <Head>

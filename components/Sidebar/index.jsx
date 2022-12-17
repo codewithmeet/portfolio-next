@@ -74,6 +74,4 @@ const CustomBox = styled.div`
       display: grid;
       transform: translate(0px, 90px);
     `};
-
-  ${(props) => console.log(props.isShown)}
 `;

@@ -1,7 +1,7 @@
 import ReactMovielyImage from "./public/portfolio-img/moviely.png";
 import ReactWeatherlyImage from "./public/portfolio-img/weatherly.png";
 import NevittaImage from "./public/portfolio-img/nevitta.png";
-import TroopixelImage from "./public/portfolio-img/Troopixel.png";
+import TroopixelImage from "./public/portfolio-img/troopixel.png";
 import MyPortfolioImage from "./public/portfolio-img/myportfolio.png";
 
 export default {

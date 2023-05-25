@@ -54,7 +54,7 @@ const Footer = (props) => {
       body: JSON.stringify(data),
     }).then((res) => {
       alert(
-        "We have received your message and will reply to you within 15 minutes. Thank you."
+        `We have received your message and will reply to you within 15 minutes. Thank you.`
       );
       reset();
     });
@@ -118,7 +118,7 @@ const Footer = (props) => {
               </FooterFormEleWrap>
             </FooterFormEleWrap>
             <FooterFormSubmit type="submit" disabled={isSendingEmail}>
-              Let&apos;s Talk
+              Let's Talk
             </FooterFormSubmit>
           </FooterForm>
         </FooterContainer>

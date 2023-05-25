@@ -43,7 +43,7 @@ const HeroSection = (props) => {
     <h1>
       Hello👋🏻‍,
       <br />
-      I&apos;m <span>Meet Mandaviya</span>,
+      I'm <span>Meet Mandaviya</span>,
       <br /> Unlock Your Business's Full Potential With My Modern Solutions.
     </h1>
   );

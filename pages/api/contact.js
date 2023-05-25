@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-export default function (req, res) {
+export default async function (req, res) {
   const transporter = nodemailer.createTransport({
     host: "smtpout.secureserver.net",
     secure: true,
@@ -16,24 +16,37 @@ export default function (req, res) {
     },
   });
 
-  transporter.verify(function (error, success) {
-    if (error) {
-      console.log("Error in connectingSMTP", error);
-      return;
-    }
-    console.log("EMAIL ACCESSED...");
+  await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transporter.verify(function (error, success) {
+      if (error) {
+        console.log(error);
+        reject(error);
+      } else {
+        console.log("Server is ready to take our messages");
+        resolve(success);
+      }
+    });
   });
+
   const mailData = {
     from: process.env.MAIL,
     to: req.body.email,
     subject: `LEAD GENERATED!!!!! Message From ${req.body.firstName} ${req.body.lastName}`,
     text: `This is client the client queries please check\nClient's Email: ${req.body.email} \nQueries: ${req.body.queries}`,
   };
-  console.log("EMAIL DATA ACCESSED...");
-  transporter.sendMail(mailData, function (err, info) {
-    console.log("EMAIL SENDING...");
-    console.log("EMAIL SENT...");
-    if (err) console.log("Error in sending email", err);
+
+  await new Promise((resolve, reject) => {
+    transporter.sendMail(mailData, (err, info) => {
+      if (err) {
+        console.error(err);
+        reject(err);
+      } else {
+        console.log(info);
+        resolve(info);
+      }
+    });
   });
-  res.status(200).send();
+
+  res.status(200).json({ status: "OK" });
 }

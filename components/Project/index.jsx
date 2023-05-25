@@ -36,11 +36,13 @@ const Project = ({
             <h3>{title}</h3>
             <ReadMoreReadLess limit={500}>{description}</ReadMoreReadLess>
 
-            <ul>
-              {techs.map((tech) => (
-                <li key={tech}>{tech}</li>
-              ))}
-            </ul>
+            {!!techs.length && (
+              <ul>
+                {techs?.map((tech) => (
+                  <li key={tech}>{tech}</li>
+                ))}
+              </ul>
+            )}
             <ProjectLinks>
               {github_url && (
                 <a href={github_url} target="_blank" rel="noreferrer">

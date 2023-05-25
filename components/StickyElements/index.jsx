@@ -29,7 +29,7 @@ const Container = styled.div`
   z-index: 9999;
   bottom: ${(props) => props.bottom || 0};
 
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 2px;
   font-size: 0.8em;
   writing-mode: vertical-lr;

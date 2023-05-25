@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Row from "../Row";
 
 import Box from "../Box";
@@ -14,6 +14,18 @@ import {
   FooterRightsPara,
 } from "./Footer.style";
 import Heading from "../Heading";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const contactFormSchema = yup
+  .object({
+    firstName: yup.string().required(),
+    lastName: yup.string().required(),
+    email: yup.string().email().required(),
+    queries: yup.string().min(2).max(255).required(),
+  })
+  .required();
 
 /* Todo */
 /**
@@ -22,6 +34,31 @@ import Heading from "../Heading";
  */
 
 const Footer = (props) => {
+  const [isSendingEmail, setIsSendingEmail] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(contactFormSchema),
+  });
+  const onSubmit = (data) => {
+    console.log(data);
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      alert(
+        "We have received your message and will reply to you within 15 minutes. Thank you."
+      );
+      reset();
+    });
+  };
   return (
     <Row>
       <Box {...props}>
@@ -30,21 +67,37 @@ const Footer = (props) => {
           subtitle="Let's turn an idea into reality"
         />
         <FooterContainer>
-          <FooterForm>
+          <FooterForm onSubmit={handleSubmit(onSubmit)}>
             <FooterFormEleWrap>
               <FooterFormEleWrap column>
                 <FooterFormInputLabel>First Name*</FooterFormInputLabel>
-                <FooterFormInput placeholder="Meet" />
+                <FooterFormInput
+                  placeholder="Your first name, please?"
+                  {...register("firstName")}
+                  disabled={isSendingEmail}
+                />
+                {errors.firstName && <p>First name is required.</p>}
               </FooterFormEleWrap>
               <FooterFormEleWrap column>
                 <FooterFormInputLabel>Last Name*</FooterFormInputLabel>
-                <FooterFormInput placeholder="Mandaviya" />
+                <FooterFormInput
+                  placeholder="Your last name, please?"
+                  {...register("lastName")}
+                  disabled={isSendingEmail}
+                />
+                {errors.lastName && <p>Last name is required.</p>}
               </FooterFormEleWrap>
             </FooterFormEleWrap>
             <FooterFormEleWrap>
               <FooterFormEleWrap column>
                 <FooterFormInputLabel>Email*</FooterFormInputLabel>
-                <FooterFormInput autoComplete="off" placeholder="abc@abc.com" />
+                <FooterFormInput
+                  autoComplete="off"
+                  placeholder="johndoe@gmail.com"
+                  {...register("email")}
+                  disabled={isSendingEmail}
+                />
+                {errors.email && <p>Email is required.</p>}
               </FooterFormEleWrap>
             </FooterFormEleWrap>
             <FooterFormEleWrap>
@@ -53,12 +106,20 @@ const Footer = (props) => {
                 <FooterFormTextArea
                   rows="6"
                   autoComplete="off"
-                  placeholder="Feel free to ask"
-                  defaultValue="I want to turn my idea into reality."
+                  placeholder="Hmm, it looks like you haven't written your queries yet."
+                  {...register("queries")}
+                  disabled={isSendingEmail}
                 />
+                {errors.queries && (
+                  <p>
+                    Hmm, it looks like you haven't written your question yet
+                  </p>
+                )}
               </FooterFormEleWrap>
             </FooterFormEleWrap>
-            <FooterFormSubmit>Let&apos;s Talk</FooterFormSubmit>
+            <FooterFormSubmit type="submit" disabled={isSendingEmail}>
+              Let&apos;s Talk
+            </FooterFormSubmit>
           </FooterForm>
         </FooterContainer>
 

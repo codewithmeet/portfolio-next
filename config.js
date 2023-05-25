@@ -3,6 +3,7 @@ import ReactWeatherlyImage from "./public/portfolio-img/weatherly.png";
 import NevittaImage from "./public/portfolio-img/nevitta.png";
 import TroopixelImage from "./public/portfolio-img/troopixel.png";
 import MyPortfolioImage from "./public/portfolio-img/myportfolio.png";
+import RampwinImage from "./public/portfolio-img/Rampwin.png";
 
 export default {
   navlinks: [
@@ -13,7 +14,7 @@ export default {
     },
     {
       id: 2,
-      title: "About Me",
+      title: "Who I am?",
       url: "#about",
     },
     {
@@ -29,27 +30,41 @@ export default {
   ],
 
   about: [
-    "Build web applications, marketing automations, chatbots and more from scratch.",
-    "Develop high-quality Backend Architectures, RESTful APIs, Socket Architecture and web services that can scale accordingly.",
-    "Integrate third-party services like (Twilio, Stripe, MailChimp & many more).",
-    "Configure and deploy web applications on any cloud-based environment.",
-    " Communicate clearly. And it's OK if you are far from the technical knowledge and terms.",
+    "Communicate clearly. It's perfectly fine if you have limited technical knowledge and are unfamiliar with technical terms.",
+    "Build Custom Trained ChatGPT Powered Bots.",
+    "Develop web applications, marketing automations, and chatbots from scratch.",
+    "Create high-quality Backend Architectures, RESTful APIs, Socket Architecture, and WebRTC services that can scale accordingly.",
+    "Integrate third-party services such as ZOHO, SalesForce, Slack, Twilio, Stripe, MailChimp, and many more.",
+    "Configure and deploy web applications on any cloud-based environment with CI/CD.",
   ],
 
   skills: [
-    "ReactJs",
-    "NextJs",
-    "NodeJs",
-    "ExpressJs",
-    "MongoDb",
-    "Redux",
-    "Recoil",
-    "GraphQL",
+    "Langchain (Backend / A.I.)",
+    "ReactJs (Frontent)",
+    "NextJs (Frontent)",
+    "NodeJs (Backend)",
+    "ExpressJs (Backend)",
+    "MongoDb (Database)",
+    "Redis (Database)",
+    "PostgresSQL (Database)",
+    "Redux (Frontent)",
+    "Recoil (Frontent)",
+    "GraphQL (Backend)",
   ],
 
   works: [
     {
-      id: 0,
+      id: 1,
+      title: "Rampwin - Streamline Conversations with AI",
+      description:
+        "I played a key role developing this awesome marketing automation software for Rampwin Technologies Pvt. Ltd. which Engage your customers efficiently on WhatsApp! Convert your Shopify & Woocomerce Store into Whatsapp Store. Generate More Revenue.Engage Customers like never before. Personalize Support & enhance customer satisfaction using Team Inbox. Target Potential Customers using Whatsapp Broadcasts & Drip Campaigns with actionable Reporting. Automate your user conversation using NO CODE BOT Builder & Integrate to more than 10 applications.",
+      image: RampwinImage,
+      github_url: null,
+      techs: ["SECRET🤐"],
+      live_url: "https://www.rampwin.com/",
+    },
+    {
+      id: 2,
       title:
         "Nevitta - Indian manufacturer of the finest architectural hardware",
       description:
@@ -67,7 +82,7 @@ export default {
     },
 
     {
-      id: 1,
+      id: 3,
       title: "Troopixel - Your Imagination Our Pixels",
       description:
         "Troopixel is a creative agency that specializes in bringing their clients' imaginations to life through the use of pixels. Their website, built using ReactJS and styled components, offers a visually stunning user experience that showcases their work and capabilities. The website also utilizes Framer Motion, a powerful animation library for React, to add smooth and engaging animations to the site. In addition to its visually appealing design, Troopixel's website also includes a custom mapping feature powered by the Google Maps API. This allows visitors to easily find the agency's location and get directions to their office. The website also includes an email API that allows visitors to contact the agency directly with any questions or inquiries they may have. Overall, Troopixel's website is a testament to their dedication to creativity and excellence in their work. If you are looking for a creative agency that can bring your ideas to life, Troopixel is an excellent choice.",
@@ -85,7 +100,7 @@ export default {
       live_url: "https://www.troopixel.com/",
     },
     {
-      id: 2,
+      id: 4,
       title: "React Moviely",
       description:
         "My react movie analysis app is a web application built using React and a combination of Firebase and The Movie DB API. The purpose of the project was to create a platform where users can search for and analyze movies and TV shows. The main feature of the app is the ability to search for movies and TV shows by title or actor, and view detailed information about each one, including ratings, cast and crew, plot summary, and more. Users can also save their favorite movies and TV shows to a personal watchlist and leave reviews for other users to see. To build the app, I used a variety of technologies and tools, including the React JavaScript library, Firebase for user authentication and data storage, and the Movie DB API for movie and TV show data.",
@@ -101,7 +116,7 @@ export default {
       live_url: "https://react-moviely.web.app",
     },
     {
-      id: 3,
+      id: 5,
       title: "React Weatherly",
       description:
         "My weather analytics project was a web application built using React.js and a weather API. The purpose of the project was to provide users with up-to-date weather data and insights for a given location. The main feature of the project is the ability to search for and display weather data for a specific city or region. This data includes current conditions, as well as forecasted temperatures {and} {precipitation} for the next several days. To build the application, I used a variety of technologies and tools, including the React JavaScript library and Axios for API calls. I also implemented various design and user experience elements, such as a responsive layout and intuitive navigation, to make the application easy to use and visually appealing.",
@@ -118,7 +133,7 @@ export default {
       live_url: "https://react-weatherly-6421.web.app",
     },
     {
-      id: 4,
+      id: 6,
       title: "My Portfoilio",
       description:
         "My portfolio project is a website built using Next.js, a popular JavaScript framework for building server-rendered applications. The purpose of the project was to create a professional online presence that showcases my skills and experience as a developer.One of the key features of the site is its responsive design, which ensures that it looks great and is easy to navigate on any device, from desktop to mobile. I also incorporated some interactive elements, such as smooth scrolling and hover effects, to make the user experience more engaging. To build the site, I also utilized various tools and libraries, such as Styled Components and Vercel, to streamline the development process and ensure the site was fast and reliable.",

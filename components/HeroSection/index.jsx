@@ -3,11 +3,10 @@ import Box from "../Box";
 import Button from "../Button";
 import { motion } from "framer-motion";
 
-import profilePic from "../../public/profile-1.png";
+import profilePic from "../../public/profile-3.png";
 import topRatedBadge from "../../public/top-rated.png";
 
 import {
-  HeroBackground,
   HeroPic,
   HeroPicContainer,
   HeroPicWrapper,
@@ -45,16 +44,21 @@ const HeroSection = (props) => {
       Hello👋🏻‍,
       <br />
       I&apos;m <span>Meet Mandaviya</span>,
-      <br /> I build things for the web.
+      <br /> Unlock Your Business's Full Potential With My Modern Solutions.
     </h1>
   );
 
   const two = (
     <h3>
-      I have 3+ years of experience in crafting web applications and solutions
-      for <span>start-ups</span> to <span>large companies</span>. Also I help
-      business owners find their success by building MVPs. Currently I&apos;m at
-      Mars and solving problems for aliens.
+      Transform your business with my expert web solutions. With{" "}
+      <span>4+ years</span> of experience in crafting custom applications, I
+      have what it takes to take your start-up processes to the next level. My
+      focus is on helping business owners find success, and I do that by
+      building effective MVPs.{" "}
+      <span>
+        Don't settle for outdated technology, let me help you drive innovation
+        and unlock your business's full potential.
+      </span>
     </h3>
   );
 

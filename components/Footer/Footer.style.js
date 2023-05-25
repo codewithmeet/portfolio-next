@@ -34,7 +34,9 @@ const FooterFormEleWrap = styled.div`
   }};
 `;
 
-const FooterFormInput = styled.input`
+const FooterFormInput = styled.input.attrs({
+  placeholderTextColor: "red",
+})`
   width: 100%;
   padding: 20px 12px;
   height: 10px;
@@ -42,6 +44,11 @@ const FooterFormInput = styled.input`
   font-size: var(--fz-xl);
   border-color: var(--brand-pink);
   background-color: var(--dark-navy);
+
+  :disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
 `;
 
 const FooterFormTextArea = styled.textarea`
@@ -52,6 +59,10 @@ const FooterFormTextArea = styled.textarea`
   border-color: var(--brand-pink);
   background-color: var(--dark-navy);
   resize: none;
+  :disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
 `;
 
 const FooterFormInputLabel = styled.label`
@@ -68,6 +79,10 @@ const FooterFormSubmit = styled.button`
   transition: var(--transition);
   color: var(--dark-navy);
   background-color: var(--brand-pink);
+  :disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
   :hover {
     color: var(--brand-pink);
     background-color: var(--dark-navy);
@@ -79,12 +94,11 @@ const FooterFormSubmit = styled.button`
 `;
 
 const FooterRightsContainer = styled.div`
-  margin-top: 4em;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2;
-  margin: 2rem 0;
+  padding: 2rem 0 2rem 0;
 `;
 const FooterRightsPara = styled.div`
   font-size: ${(props) => props?.size || "16px"};

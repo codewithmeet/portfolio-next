@@ -3,10 +3,8 @@ import { ThemeProvider } from "styled-components";
 import theme from "../styles/Theme";
 import GlobalStyle from "../styles/GlobalStyles";
 
-import profilePic from "../public/profilepic.png";
 import {
   AboutSection,
-  Box,
   Footer,
   Header,
   HeroSection,
@@ -15,7 +13,6 @@ import {
   StickWrapper,
   WorkSection,
 } from "../components";
-import Row from "../components/Row";
 import { useEffect, useState } from "react";
 import { LoadingScreen } from "../components/LoadingScreen";
 
@@ -28,9 +25,7 @@ export default function Home() {
   if (isLoading) return <LoadingScreen />;
   return (
     <>
-      <Head>
-        <title>Home</title>
-      </Head>
+      <Head />
       <ThemeProvider theme={theme}>
         <GlobalStyle />
 
